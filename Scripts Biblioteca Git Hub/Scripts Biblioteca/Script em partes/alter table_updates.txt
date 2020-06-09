@@ -1,0 +1,38 @@
+ALTER TABLE livro ADD COLUMN paginas int;
+ALTER TABLE livro ADD COLUMN Quantidade_Exemplares int;
+
+update livro SET paginas = 280,Quantidade_Exemplares=10 where codLivro = 1;
+update livro SET paginas = 1500,Quantidade_Exemplares=7 where codLivro = 2;
+update livro SET paginas = 592,Quantidade_Exemplares=5 where codLivro = 3;
+update livro SET paginas = 1200,Quantidade_Exemplares=3 where codLivro = 4;
+update livro SET paginas = 225,Quantidade_Exemplares=2 where codLivro = 5;
+update livro SET paginas = 384,Quantidade_Exemplares=3 where codLivro = 6;
+update livro SET paginas = 42,Quantidade_Exemplares=8 where codLivro = 7;
+update livro SET paginas = 256,Quantidade_Exemplares=4 where codLivro = 8;
+update livro SET paginas = 152,Quantidade_Exemplares=10 where codLivro = 9;
+update livro SET paginas = 210,Quantidade_Exemplares=7 where codLivro = 10;
+
+UPDATE `cliente_aluno` SET `Email` = 'Gabrielfernando@hotmail.com' WHERE `cliente_aluno`.`ra` = 1;
+UPDATE `cliente_aluno` SET `Email` = 'JCdaNazaré@ceu.com' WHERE `cliente_aluno`.`ra` = 2;
+UPDATE `cliente_aluno` SET `Email` = 'Gramadocorujooj@hotmail.com' WHERE `cliente_aluno`.`ra` = 3;
+UPDATE `cliente_aluno` SET `Email` = 'victor5243@gmail.com' WHERE `cliente_aluno`.`ra` = 4;
+UPDATE `cliente_aluno` SET `Email` = 'Joãogameplay@hotmail.com' WHERE `cliente_aluno`.`ra` = 5;
+UPDATE `cliente_aluno` SET `Email` = 'Jorgeson@gmail.com' WHERE `cliente_aluno`.`ra` = 6;
+UPDATE `cliente_aluno` SET `Email` = 'Larisaegirl@hotmail.com' WHERE `cliente_aluno`.`ra` = 7;
+UPDATE `cliente_aluno` SET `Email` = 'Yasmininha@live.com' WHERE `cliente_aluno`.`ra` = 8;
+UPDATE `cliente_aluno` SET `Email` = 'Janaina@gmail.com' WHERE `cliente_aluno`.`ra` = 9;
+UPDATE `cliente_aluno` SET `Email` = 'Geraldojordao@hyahoo.com' WHERE `cliente_aluno`.`ra` = 10;
+
+UPDATE `cliente_aluno` SET `Celular` = '11957547628' WHERE `cliente_aluno`.`ra` = 1;
+UPDATE `cliente_aluno` SET `Celular` = '11963856223' WHERE `cliente_aluno`.`ra` = 2;
+UPDATE `cliente_aluno` SET `Celular` = '11985736534' WHERE `cliente_aluno`.`ra` = 3;
+UPDATE `cliente_aluno` SET `Celular` = '11934755237' WHERE `cliente_aluno`.`ra` = 4;
+UPDATE `cliente_aluno` SET `Celular` = '11987757134' WHERE `cliente_aluno`.`ra` = 5;
+UPDATE `cliente_aluno` SET `Celular` = '11947621154' WHERE `cliente_aluno`.`ra` = 6;
+UPDATE `cliente_aluno` SET `Celular` = '11903655834' WHERE `cliente_aluno`.`ra` = 7;
+UPDATE `cliente_aluno` SET `Celular` = '11975633756' WHERE `cliente_aluno`.`ra` = 8;
+UPDATE `cliente_aluno` SET `Celular` = '11949898476' WHERE `cliente_aluno`.`ra` = 9;
+UPDATE `cliente_aluno` SET `Celular` = '11959971465' WHERE `cliente_aluno`.`ra` = 10;
+
+UPDATE `cliente_aluno` SET `Nome` = 'Larisa' WHERE `cliente_aluno`.`ra` = 7;
+UPDATE `emprestimo_devolucao` SET `Data_Emprestimo` = '2018-09-21' WHERE `emprestimo_devolucao`.`codEmprestimo` = 7;

@@ -1,0 +1,137 @@
+create database biblioteca;
+
+use biblioteca;
+
+CREATE TABLE Cliente_Aluno (
+ra int PRIMARY KEY auto_increment,
+Nome varchar (50),
+Turma varchar (50),
+Telefone varchar (50),
+Celular varchar (50),
+Email varchar (50) unique,
+DataNascimento varchar (50)
+);
+
+CREATE TABLE Bibliotecario (
+DataNascimento varchar (50),
+RG varchar (50) unique,
+Telefone varchar (50),
+CPF varchar (50) unique,
+Nome varchar (50),
+CodFuncionario int PRIMARY KEY auto_increment,
+Email varchar (50) unique,
+Logradouro varchar (50),
+Num varchar (50),
+Complemeto varchar (50),
+Bairro varchar (50),
+Cidade varchar (50),
+UF varchar (50),
+CEP varchar (50)
+);
+
+CREATE TABLE Livro (
+Editora varchar (50),
+Genero varchar (50),
+Autor varchar (50),
+codLivro int PRIMARY KEY auto_increment,
+Titulo varchar (50)
+);
+
+CREATE TABLE Emprestimo_Devolucao (
+Data_Emprestimo date,
+codEmprestimo int PRIMARY KEY auto_increment,
+Data_Devolucao date,
+CodFuncionario int,
+codLivro int,
+ra int,
+FOREIGN KEY(CodFuncionario) REFERENCES Bibliotecario (CodFuncionario),
+FOREIGN KEY(codLivro) REFERENCES Livro (codLivro),
+FOREIGN KEY(ra) REFERENCES Cliente_Aluno (ra)
+)
+
+INSERT INTO bibliotecario (Nome, Email, DataNascimento, CPF, Telefone, Cidade, UF) VALUES
+('Franciele','franci@yhotmail.com','1990-07-25','25.323.543-67','53636-4354','Ribeirão Pires','SP'),
+('João','john@y.com','1984-04-18','27.847.845-65','43534-9576','\Maua','SP'),
+('Joel','joel@ybol.com','1988-03-07','23.846.968-66','96578-7544','Rio Grande da serra','SP');
+
+INSERT INTO livro (Titulo, Autor, Editora, Genero) VALUES
+('Mestres do capitalismo','Nando Moura','Auster','Guia'),
+('Biblia','Apostolos','Deus','Manual e Guia'),
+('As Cronicas de Gelo e fogo','George R. R. Martin','Bantam Books','Fantasia'),
+('O Senhor dos Anéis','J. R. R. Tolkien','Allen & Unwin','Fantasia'),
+('Harry Potter','J. K. Rowling','Bloomsbury Publishing','Fantasia'),
+('Percy Jackson','Rick Riordan','Miramax Books','Aventuras'),
+('Diário de um Banana','Jeff Kinney','V & R','Comedia'),
+('Jogos Vorazes','Suzanne Collins','Scholastic','Aventura'),
+('Sherlock Holmes','Arthur Conan Doyle','Oxford','Misterio'),
+('Viagem ao Centro da Terra','Júlio Verne','Pierre-Jules Hetzel','Ficção_aventura');
+
+INSERT INTO cliente_aluno (Nome, DataNascimento, Telefone, Turma) VALUES
+('Gabriel Fernando','2004-08-17','95444-4763','2C'),
+('Jesus de Nazare','0000-12-25','12345-6789','2C'),
+('Graminha','2002-11-31','09225-8421','3C'),
+('victor','2003-02-18','84575-8475','3C'),
+('joão','2004-06-24','95546-8657','2C'),
+('Jorge','2004-10-15','03356-4546','2B'),
+('larisa','20003-04-30','96675-9787','3B'),
+('Yasmin','2004-07-06','95444-9778','2A'),
+('Janaina','2004-01-12','57656-9889','2B'),
+('Geraldo','2005-09-27','65657-8989','1A');
+
+
+
+INSERT INTO emprestimo_devolucao (CodFuncionario, codLivro, ra, Data_Emprestimo, Data_Devolucao) VALUES
+(2,3,4,'2019-08-12','2019-10-24'),
+(1,2,2,'2020-01-03','2033-12-25'),
+(1,9,3,'2019-04-19','2019-08-17'),
+(2,7,4,'2020-05-09','2020-06-11'),
+(3,1,6,'2019-03-28','2019-05-26'),
+(3,4,8,'2020-08-12','2020-10-23'),
+(1,8,7,'2018-09-31','2018-11-02'),
+(3,7,4,'2020-11-03','2020-12-05'),
+(2,8,6,'2020-02-07','2020-05-17'),
+(2,3,1,'2019-01-14','2019-04-04'),
+(3,3,5,'2019-04-22','2019-06-12'),
+(1,5,3,'2020-02-26','2020-06-16'),
+(1,5,7,'2018-05-15','2018-10-22'),
+(3,7,6,'2018-11-07','2018-12-06'),
+(2,1,1,'2020-05-20','2020-08-17');
+
+ALTER TABLE livro ADD COLUMN paginas int;
+ALTER TABLE livro ADD COLUMN Quantidade_Exemplares int;
+
+update livro SET paginas = 280,Quantidade_Exemplares=10 where codLivro = 1;
+update livro SET paginas = 1500,Quantidade_Exemplares=7 where codLivro = 2;
+update livro SET paginas = 592,Quantidade_Exemplares=5 where codLivro = 3;
+update livro SET paginas = 1200,Quantidade_Exemplares=3 where codLivro = 4;
+update livro SET paginas = 225,Quantidade_Exemplares=2 where codLivro = 5;
+update livro SET paginas = 384,Quantidade_Exemplares=3 where codLivro = 6;
+update livro SET paginas = 42,Quantidade_Exemplares=8 where codLivro = 7;
+update livro SET paginas = 256,Quantidade_Exemplares=4 where codLivro = 8;
+update livro SET paginas = 152,Quantidade_Exemplares=10 where codLivro = 9;
+update livro SET paginas = 210,Quantidade_Exemplares=7 where codLivro = 10;
+
+UPDATE `cliente_aluno` SET `Email` = 'Gabrielfernando@hotmail.com' WHERE `cliente_aluno`.`ra` = 1;
+UPDATE `cliente_aluno` SET `Email` = 'JCdaNazaré@ceu.com' WHERE `cliente_aluno`.`ra` = 2;
+UPDATE `cliente_aluno` SET `Email` = 'Gramadocorujooj@hotmail.com' WHERE `cliente_aluno`.`ra` = 3;
+UPDATE `cliente_aluno` SET `Email` = 'victor5243@gmail.com' WHERE `cliente_aluno`.`ra` = 4;
+UPDATE `cliente_aluno` SET `Email` = 'Joãogameplay@hotmail.com' WHERE `cliente_aluno`.`ra` = 5;
+UPDATE `cliente_aluno` SET `Email` = 'Jorgeson@gmail.com' WHERE `cliente_aluno`.`ra` = 6;
+UPDATE `cliente_aluno` SET `Email` = 'Larisaegirl@hotmail.com' WHERE `cliente_aluno`.`ra` = 7;
+UPDATE `cliente_aluno` SET `Email` = 'Yasmininha@live.com' WHERE `cliente_aluno`.`ra` = 8;
+UPDATE `cliente_aluno` SET `Email` = 'Janaina@gmail.com' WHERE `cliente_aluno`.`ra` = 9;
+UPDATE `cliente_aluno` SET `Email` = 'Geraldojordao@hyahoo.com' WHERE `cliente_aluno`.`ra` = 10;
+
+UPDATE `cliente_aluno` SET `Celular` = '11957547628' WHERE `cliente_aluno`.`ra` = 1;
+UPDATE `cliente_aluno` SET `Celular` = '11963856223' WHERE `cliente_aluno`.`ra` = 2;
+UPDATE `cliente_aluno` SET `Celular` = '11985736534' WHERE `cliente_aluno`.`ra` = 3;
+UPDATE `cliente_aluno` SET `Celular` = '11934755237' WHERE `cliente_aluno`.`ra` = 4;
+UPDATE `cliente_aluno` SET `Celular` = '11987757134' WHERE `cliente_aluno`.`ra` = 5;
+UPDATE `cliente_aluno` SET `Celular` = '11947621154' WHERE `cliente_aluno`.`ra` = 6;
+UPDATE `cliente_aluno` SET `Celular` = '11903655834' WHERE `cliente_aluno`.`ra` = 7;
+UPDATE `cliente_aluno` SET `Celular` = '11975633756' WHERE `cliente_aluno`.`ra` = 8;
+UPDATE `cliente_aluno` SET `Celular` = '11949898476' WHERE `cliente_aluno`.`ra` = 9;
+UPDATE `cliente_aluno` SET `Celular` = '11959971465' WHERE `cliente_aluno`.`ra` = 10;
+
+UPDATE `cliente_aluno` SET `Nome` = 'Larisa' WHERE `cliente_aluno`.`ra` = 7;
+UPDATE `emprestimo_devolucao` SET `Data_Emprestimo` = '2018-09-21' WHERE `emprestimo_devolucao`.`codEmprestimo` = 7;

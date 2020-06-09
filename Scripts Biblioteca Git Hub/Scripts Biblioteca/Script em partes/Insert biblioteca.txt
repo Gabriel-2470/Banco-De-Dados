@@ -1,0 +1,47 @@
+INSERT INTO bibliotecario (Nome, Email, DataNascimento, CPF, Telefone, Cidade, UF) VALUES
+('Franciele','franci@yhotmail.com','1990-07-25','25.323.543-67','53636-4354','Ribeirão Pires','SP'),
+('João','john@y.com','1984-04-18','27.847.845-65','43534-9576','\Maua','SP'),
+('Joel','joel@ybol.com','1988-03-07','23.846.968-66','96578-7544','Rio Grande da serra','SP');
+
+INSERT INTO livro (Titulo, Autor, Editora, Genero) VALUES
+('Mestres do capitalismo','Nando Moura','Auster','Guia'),
+('Biblia','Apostolos','Deus','Manual e Guia'),
+('As Cronicas de Gelo e fogo','George R. R. Martin','Bantam Books','Fantasia'),
+('O Senhor dos Anéis','J. R. R. Tolkien','Allen & Unwin','Fantasia'),
+('Harry Potter','J. K. Rowling','Bloomsbury Publishing','Fantasia'),
+('Percy Jackson','Rick Riordan','Miramax Books','Aventuras'),
+('Diário de um Banana','Jeff Kinney','V & R','Comedia'),
+('Jogos Vorazes','Suzanne Collins','Scholastic','Aventura'),
+('Sherlock Holmes','Arthur Conan Doyle','Oxford','Misterio'),
+('Viagem ao Centro da Terra','Júlio Verne','Pierre-Jules Hetzel','Ficção_aventura');
+
+INSERT INTO cliente_aluno (Nome, DataNascimento, Telefone, Turma) VALUES
+('Gabriel Fernando','2004-08-17','95444-4763','2C'),
+('Jesus de Nazare','0000-12-25','12345-6789','2C'),
+('Graminha','2002-11-31','09225-8421','3C'),
+('victor','2003-02-18','84575-8475','3C'),
+('joão','2004-06-24','95546-8657','2C'),
+('Jorge','2004-10-15','03356-4546','2B'),
+('larisa','20003-04-30','96675-9787','3B'),
+('Yasmin','2004-07-06','95444-9778','2A'),
+('Janaina','2004-01-12','57656-9889','2B'),
+('Geraldo','2005-09-27','65657-8989','1A');
+
+
+
+INSERT INTO emprestimo_devolucao (CodFuncionario, codLivro, ra, Data_Emprestimo, Data_Devolucao) VALUES
+(2,3,4,'2019-08-12','2019-10-24'),
+(1,2,2,'2020-01-03','2033-12-25'),
+(1,9,3,'2019-04-19','2019-08-17'),
+(2,7,4,'2020-05-09','2020-06-11'),
+(3,1,6,'2019-03-28','2019-05-26'),
+(3,4,8,'2020-08-12','2020-10-23'),
+(1,8,7,'2018-09-31','2018-11-02'),
+(3,7,4,'2020-11-03','2020-12-05'),
+(2,8,6,'2020-02-07','2020-05-17'),
+(2,3,1,'2019-01-14','2019-04-04'),
+(3,3,5,'2019-04-22','2019-06-12'),
+(1,5,3,'2020-02-26','2020-06-16'),
+(1,5,7,'2018-05-15','2018-10-22'),
+(3,7,6,'2018-11-07','2018-12-06'),
+(2,1,1,'2020-05-20','2020-08-17');
